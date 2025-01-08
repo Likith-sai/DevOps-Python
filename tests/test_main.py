@@ -1,4 +1,10 @@
 import unittest
+import sys
+import os
+
+# Add the parent directory to the system path so `main.py` can be imported
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from main import generate_password 
 class TestPasswordGenerator(unittest.TestCase):
     
