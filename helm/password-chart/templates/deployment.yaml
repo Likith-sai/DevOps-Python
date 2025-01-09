@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: password-app
+  labels:
+    app: password-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: password-app
+  template:
+    metadata:
+      labels:
+        app: password-app
+    spec:
+      containers:
+      - name: password-app
+        image: likith035/password-app:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 5000

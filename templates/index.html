@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <form method="POST">
+        <label for="passlen">Enter Password Length:</label>
+        <input type="number" id="passlen" name="passlen" required>
+        <button type="submit">Generate Password</button>
+    </form>
+
+    {% if password %}
+        <h2>Generated Password: {{ password }}</h2>
+    {% endif %}
+</body>
+</html>
